@@ -2,6 +2,14 @@ import * as React from "react";
 import { Admin, Resource } from 'react-admin';
 
 import {
+  EventList,
+  EventEdit,
+  EventCreate,
+  EventShow,
+  EventIcon
+} from './data/events';
+
+import {
   ArticleList,
   ArticleEdit,
   ArticleCreate,
@@ -52,6 +60,13 @@ const App = () => (
       show={UserShow}
       create={UserCreate}
       edit={UserEdit} />
+    <Resource
+      name="events"
+      icon={EventIcon}
+      list={EventList}
+      show={EventShow}
+      create={EventCreate}
+      edit={EventEdit} />
     <Resource
       name="articles"
       icon={ArticleIcon}

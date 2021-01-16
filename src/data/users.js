@@ -1,5 +1,5 @@
 import * as React from "react";
-import { List, Datagrid, ReferenceField, Edit, Create, Show, SimpleShowLayout, TextField, SimpleForm, EditButton, ShowButton, TextInput } from 'react-admin';
+import { List, Datagrid, Edit, Create, Show, SimpleShowLayout, TextField, SimpleForm, EditButton, ShowButton, TextInput } from 'react-admin';
 import GroupRoundedIcon from '@material-ui/icons/GroupRounded';
 export const UserIcon = GroupRoundedIcon;
 

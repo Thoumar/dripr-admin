@@ -1,6 +1,6 @@
 import * as React from "react";
 import RichTextInput from 'ra-input-rich-text';
-import { SelectArrayInput, RichTextField, ImageField, List, NumberField, SingleFieldList, ChipField, Datagrid, ArrayField, Edit, Create, Show, SimpleShowLayout, DateField, TextField, SimpleForm, EditButton, TextInput, DateInput, BooleanField, BooleanInput, NumberInput, ShowButton } from 'react-admin';
+import { SelectArrayInput, ImageInput, RichTextField, ImageField, List, NumberField, SingleFieldList, ChipField, Datagrid, ArrayField, Edit, Create, Show, SimpleShowLayout, DateField, TextField, SimpleForm, EditButton, TextInput, DateInput, BooleanField, BooleanInput, NumberInput, ShowButton } from 'react-admin';
 import PlaceRoundedIcon from '@material-ui/icons/PlaceRounded';
 export const PlaceIcon = PlaceRoundedIcon;
 
@@ -26,10 +26,9 @@ export const PlaceEdit = (props) => (
             <TextInput disabled source="id" />
             <TextInput source="name" />
             <TextInput source="address" />
-            <TextInput source="cover" />
-            {/* <ImageInput source="cover" label="Cover picture" accept="image/*">
-                <ImageField source="cover" title="title" />
-            </ImageInput> */}
+            <ImageInput multiple={true} source="pictures" label="Cover pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+                <ImageField source="src" />
+            </ImageInput>
             <TextInput source="short" />
             <RichTextInput source="description" />
             <DateInput source="lastupdate" />
@@ -38,9 +37,10 @@ export const PlaceEdit = (props) => (
             <TextInput source="phoneNumber" />
             <TextInput source="website" />
             <BooleanInput source="isVerified" />
-            <SelectArrayInput label="Tags" source="tags" choices={[
+            <SelectArrayInput label="Tags" source="scopes" choices={[
                 { id: 'to_try', name: 'A tester' },
                 { id: 'popular', name: 'Populaire' },
+                { id: 'map', name: 'Carte' },
             ]} />
         </SimpleForm>
     </Edit>
@@ -51,7 +51,9 @@ export const PlaceCreate = (props) => (
         <SimpleForm>
             <TextInput source="name" />
             <TextInput source="address" />
-            <TextInput source="cover" />
+            <ImageInput multiple={true} source="pictures" label="Cover pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+                <ImageField source="src" title="title" />
+            </ImageInput>
             <TextInput source="short" />
             <RichTextInput source="description" />
             <DateInput source="lastupdate" />
@@ -60,9 +62,10 @@ export const PlaceCreate = (props) => (
             <TextInput source="phoneNumber" />
             <TextInput source="website" />
             <BooleanInput source="isVerified" />
-            <SelectArrayInput label="Tags" source="tags" choices={[
+            <SelectArrayInput label="Tags" source="scopes" choices={[
                 { id: 'to_try', name: 'A tester' },
                 { id: 'popular', name: 'Populaire' },
+                { id: 'map', name: 'Carte' },
             ]} />
         </SimpleForm>
     </Create>
@@ -75,7 +78,9 @@ export const PlaceShow = (props) => (
             <TextField disabled source="id" />
             <TextField source="name" />
             <TextField source="address" />
-            <ImageField source="cover" />
+            <ImageField multiple={true} source="pictures" label="Cover pictures" accept="image/*" placeholder={<p>Drop your file here</p>}>
+                <ImageField source="src" />
+            </ImageField>
             <TextField source="short" />
             <RichTextField  source="description" />
             <DateField source="lastupdate" />
@@ -84,9 +89,9 @@ export const PlaceShow = (props) => (
             <TextField source="phoneNumber" />
             <TextField source="website" />
             <BooleanField source="isVerified" />
-            <ArrayField source="tags">
+            <ArrayField source="scopes">
                 <SingleFieldList>
-                    <ChipField source="tags" />
+                    <ChipField source="scopes" />
                 </SingleFieldList>
             </ArrayField>
         </SimpleShowLayout>
