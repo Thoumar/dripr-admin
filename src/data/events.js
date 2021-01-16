@@ -1,6 +1,5 @@
 import * as React from "react";
-import RichTextInput from 'ra-input-rich-text';
-import { SelectArrayInput, ImageInput, RichTextField, ImageField, List, NumberField, SingleFieldList, ChipField, Datagrid, ArrayField, Edit, Create, Show, SimpleShowLayout, DateField, TextField, SimpleForm, EditButton, TextInput, DateInput, BooleanField, BooleanInput, NumberInput, ShowButton } from 'react-admin';
+import { List, Datagrid, Edit, Create, Show, SimpleShowLayout, TextField, SimpleForm, EditButton, TextInput, ShowButton } from 'react-admin';
 import DateRangeOutlinedIcon from '@material-ui/icons/DateRangeOutlined';
 export const EventIcon = DateRangeOutlinedIcon;
 
